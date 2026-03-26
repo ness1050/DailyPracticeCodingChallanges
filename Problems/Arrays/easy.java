@@ -11,11 +11,11 @@ public class easy {
         
         // First task given an Array or list and a target 
         // where to find the two sum of integer to add up to the target
-        int [] nums = {1,3,5,7,9, 20};
+        int [] nums = {1,6,5,7,9, 14};
         int target = 12;
         int[] result =  e.pairTarget(nums, target);
         System.out.println(Arrays.toString(result));
-        System.out.println(e.MaxValue(result));
+        System.out.println("max vinst: " + e.MaxValue(nums));
     }
 
     /* Finding the target by keypair value */
@@ -46,8 +46,8 @@ public class easy {
 
     /**
      * Finding the stock prices and finding out the profit 
-     * @param prices
-     * @return
+     * @param prices stock prices
+     * @return the difference proft betweeen price if there is profit 
      */
     public int MaxValue(int[] prices) {
         int minprice = Integer.MAX_VALUE;
