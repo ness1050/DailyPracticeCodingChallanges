@@ -12,9 +12,14 @@ public class Tiktaktoe {
 
     }
 
-    JFrame frame = new  JFrame();
+    JFrame frame = new  JFrame("Tic-Tac-Toe");
     JLabel textLabel = new JLabel();
     JPanel textPanel = new JPanel();
+    JPanel boardPanel = new JPanel();
+    JButton [] [] board = new JButton[3][3];
+    String playerX = "X";
+    String playerO = "O";
+    String CurrentPlayer = playerX;
 
 
     Tiktaktoe() {
@@ -35,7 +40,19 @@ public class Tiktaktoe {
 
         textPanel.setLayout(new BorderLayout());
         textPanel.add(textLabel);
-        frame.add(textLabel);
+        frame.add(textLabel, BorderLayout.NORTH);
 
+        boardPanel.setLayout(new GridLayout(3,3));
+        boardPanel.setBackground(Color.darkGray);
+        frame.add(boardPanel);
+         
+        // for loop to create the dynamic of tic tac toe game
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                JButton tile = new JButton();
+                board[i] [j] = tile;
+                boardPanel.add(tile);
+            }
+        } 
     }
 }
