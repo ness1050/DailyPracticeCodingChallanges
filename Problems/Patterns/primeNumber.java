@@ -6,14 +6,11 @@ public class primeNumber {
         isPrime(15);
     }
 
-    public static int isPrime(int a) {
+    public static boolean isPrime(int a) {
 
-        if ( a % 2  == 0) {
-            System.out.println("isPrime number" + a);
-        } else {
-            System.out.println("Not a prime number: " + a);
-        }
-
-        return a;
+       
+        boolean result = a % 2 == 0 ?  true : false;
+        System.out.println(result);
+        return result;
     }
 }
