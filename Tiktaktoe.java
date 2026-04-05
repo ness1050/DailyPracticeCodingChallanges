@@ -1,7 +1,9 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
-import org.w3c.dom.Text;
 
 public class Tiktaktoe {
     int boardWidth = 600;
@@ -20,6 +22,8 @@ public class Tiktaktoe {
     String playerX = "X";
     String playerO = "O";
     String CurrentPlayer = playerX;
+
+    boolean gameOver = false;
 
 
     Tiktaktoe() {
@@ -52,6 +56,55 @@ public class Tiktaktoe {
                 JButton tile = new JButton();
                 board[i] [j] = tile;
                 boardPanel.add(tile);
+                tile.setBackground(Color.darkGray);
+                tile.setForeground(Color.white);
+                tile.setFont(new Font("Arial", Font.BOLD, 120));
+                tile.setFocusable(false);
+
+                tile.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if (gameOver) return;
+                        JButton tile = (JButton) e.getSource();
+                      
+    
+
+                        if(tile.getText() == "") {
+                            tile.setText(CurrentPlayer);
+                            checkWinner();
+
+                            if (!gameOver) {
+                                CurrentPlayer = CurrentPlayer == playerX ? playerO : playerX;
+                                textLabel.setText(CurrentPlayer + "'S turn.");
+                            }
+                         
+                        }
+                       
+
+                    }
+
+                    void checkWinner() {
+                       for (int i = 0; i < 3; i++) {
+                        if (board[i][0].getText() == "") continue;
+
+                        if (board[i] [0].getText() == board [i][1].getText() && board[i][1].getText()
+                         == board [i][2].getText()) {
+                            for (int j = 0; j < 3; j++) {
+                                setWinner(board[i] [j]);
+                            }
+                            gameOver = true;
+                            return;
+                        }
+                       }
+                    }
+
+                    void setWinner(JButton tile) {
+                       tile.setForeground(Color.green);
+                       tile.setForeground(Color.gray);
+                       textLabel.setText(CurrentPlayer + " is the winner");
+                       System.out.println("Want to restart the game!");
+
+                    }
+                });
             }
         } 
     }
