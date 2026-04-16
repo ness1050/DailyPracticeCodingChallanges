@@ -21,9 +21,9 @@ public class Dubble {
             System.out.println("Duplicate found: " + l[i]);
         } else {
             set.add(l[i]);
-            
         }
      }
+     System.out.println(set + "list without dupolicates");
      
     }
 }
