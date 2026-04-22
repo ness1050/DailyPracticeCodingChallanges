@@ -25,6 +25,20 @@ public class numberP {
         increasingByOne(action);
         System.out.println();
         halfDiamond(action);
+        reversePattern(action);
+    }
+
+    public static void reversePattern(int n) {
+        for (int i =1; i <= n; i++) {
+            for (int j = 2*n-1; j > i; j--) {
+                System.out.print( " ");
+            }
+            for (int j = 1; j<= i; j++) {
+                System.out.print(j+" ");
+            }
+            System.out.println();
+        }
+
     }
 
     public static void reversePrinting(int n) {
