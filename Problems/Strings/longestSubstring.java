@@ -8,7 +8,7 @@ public class longestSubstring {
     }
 
     public String solution (String str) {
-         String name = "Naseem";
+        String name = "Naseem";
         String eftername = "Qurbanali";
 
         
