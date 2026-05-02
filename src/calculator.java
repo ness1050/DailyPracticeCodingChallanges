@@ -88,11 +88,13 @@ public class Calculator {
                             displayLabel.setText("0");
 
                         } else if (buttonValue == "+/-") {
-
-                        } else {
-                           if ( buttonValue == "%") {
-
-                           };
+                            double numDispaly = Double.parseDouble(displayLabel.getText());
+                            numDispaly *= -1;
+                            displayLabel.setText(removeZeroDecimal(numDispaly));
+                        } else if ( buttonValue == "%") {
+                         double numDispaly = Double.parseDouble(displayLabel.getText());
+                         numDispaly /= 100;
+                         displayLabel.setText(removeZeroDecimal(numDispaly));
                         }
                 } else {
                     if (buttonValue == ".") {
@@ -118,5 +120,12 @@ public class Calculator {
     void clearAll() {
         A = "0";
         B = null;
+    }
+
+    String removeZeroDecimal(double numDispaly) {
+        if (numDispaly % 1 == 0) {
+            return Integer.toString((int)numDispaly);
+        }
+        return Double.toString(numDispaly);
     }
 }
