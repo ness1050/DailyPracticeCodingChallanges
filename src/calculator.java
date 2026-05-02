@@ -21,7 +21,18 @@ public class Calculator {
     JFrame frame = new JFrame("MyCalculator");
     JLabel displayLabel = new JLabel();
     JPanel displayPanel = new JPanel();
+    JPanel buttonPanel = new JPanel();
 
+    String [] buttonValues =  {
+        "AC", "+/-", "%", "÷", 
+        "7", "8", "9", "x",
+        "4", "5", "6", "-",
+        "1", "2", "3", "+",
+        "0", ".", "√", "="
+    };
+    
+    String[] rightSymbols = {"÷", "×", "-", "+", "="};
+    String[] topSymbols = {"AC", "+/-", "%"};
 
     Calculator () {
         frame.setVisible(true);
