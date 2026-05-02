@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Arrays;
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
 
@@ -36,6 +37,10 @@ public class Calculator {
         displayLabel.setHorizontalAlignment(JLabel.RIGHT);
         displayLabel.setText("0");
         displayLabel.setOpaque(true);
+
+        displayPanel.setLayout(new BorderLayout());
+        displayPanel.add(displayLabel);
+        frame.add(displayPanel, BorderLayout.NORTH);
 
     }
 }
