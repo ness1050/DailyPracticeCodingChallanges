@@ -34,6 +34,10 @@ public class Calculator {
     String[] rightSymbols = {"÷", "×", "-", "+", "="};
     String[] topSymbols = {"AC", "+/-", "%"};
 
+    String A = "0";
+    String operator = null;
+    String B  = null;
+
     Calculator () {
         frame.setVisible(true);
         frame.setSize(boardwidth, boardheight);
@@ -79,7 +83,17 @@ public class Calculator {
                 if (Arrays.asList(rightSymbols). contains(buttonValue)) {
 
                 } else if (Arrays.asList(topSymbols).contains(buttonValue) ) {
+                        if (buttonValue == "AC") {
+                            clearAll();
+                            displayLabel.setText("0");
 
+                        } else if (buttonValue == "+/-") {
+
+                        } else {
+                           if ( buttonValue == "%") {
+
+                           };
+                        }
                 } else {
                     if (buttonValue == ".") {
                         if (!displayLabel.getText().contains(buttonValue)) {
@@ -96,7 +110,13 @@ public class Calculator {
                 }
                 }
             });
+
+           
         }
 
+    }
+    void clearAll() {
+        A = "0";
+        B = null;
     }
 }
