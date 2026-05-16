@@ -16,5 +16,31 @@ public  class Account {
         this.balance = balance;
     }
 
+
+    public String getAccountNumber() {
+        return this.accountNumber;
+    }
+
+
+    public double getBalance() {
+        return this.balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public User getUser() {
+        return this.user;
+    }
+
+
+    public List<tranisition> getTransitions() {
+        return this.Transitions;
+    }
+
     
+
+   
+
 }
