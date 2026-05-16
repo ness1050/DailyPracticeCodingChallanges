@@ -8,7 +8,7 @@ public  class Account {
     private final String accountNumber;
     private double balance;
     private final User user;
-    protected final List<tranisition> Transitions = new ArrayList<>();
+    protected final List<Transaction> transactions = new ArrayList<>();
 
     public Account (String accountNumber, User user, double balance) {
         this.accountNumber = accountNumber;
@@ -35,12 +35,29 @@ public  class Account {
     }
 
 
-    public List<tranisition> getTransitions() {
-        return this.Transitions;
+    public List<Transaction> getTransitions() {
+        return this.transactions;
     }
 
     
+    public void deposit(double amount) {
+        if (amount <= 0 ) throw new IllegalArgumentException("No valid amount");
+        balance += amount;
+        transactions.add(new Transaction("Deposit", amount));
 
+    }
    
+    public void withdrawl(double amount) {
+        if (amount <= 0 || amount < balance) throw new IllegalArgumentException("No effiecent ammount");
+        balance -= amount;
+        transactions.add(new Transaction("Withdrawl", amount));
+        
+    }
+
+    public void getbalance() {
+        this.balance = balance;
+    }
+
+    
 
 }
