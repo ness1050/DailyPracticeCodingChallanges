@@ -19,6 +19,14 @@ public class Userinterface {
         System.out.println("7.Exit");
     }
 
+    public String displayError(String message) {
+        return ("Error due to: " + message);
+    }
+
+    public String displaySuccess(String message) {
+        return ("Hurra!" + message);
+    }
+
     public int getUserChoice() {
         System.out.println("Enter your choice 1-7");
         while (scan.hasNext()) {
@@ -54,11 +62,17 @@ public class Userinterface {
         return scan.nextDouble();
     }
 
-    public void createAccount() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createAccount'");
+   
+    public void displayAccountCreated(String accountNumber, String customerName, String type) {
+        System.out.println("\n🎉 Account Created Successfully!");
+        System.out.println("Account Number : " + accountNumber);
+        System.out.println("Customer Name  : " + customerName);
+        System.out.println("Account Type   : " + type);
     }
-
     
+
+    public void close() {
+        scan.close();
+    }
 
 }
