@@ -9,8 +9,17 @@ public  class User {
 
     private List<Account> accounts;
 
-    public User() {
+    public User(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
 
+    public void nullChecker(String x) {
+        if (x.isEmpty()) {
+            throw new IllegalArgumentException("You have not entered ");
+        } else {
+            return;
+        }
     }
 
 

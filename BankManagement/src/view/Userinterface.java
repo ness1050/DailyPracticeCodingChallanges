@@ -54,6 +54,11 @@ public class Userinterface {
         return scan.nextDouble();
     }
 
+    public void createAccount() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'createAccount'");
+    }
+
     
 
 }
