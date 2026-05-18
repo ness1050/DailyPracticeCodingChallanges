@@ -1,4 +1,4 @@
-package BankManagement.src.model;
+package model;
 
 import java.util.ArrayList;
 import java.util.List;
