@@ -6,6 +6,10 @@ public class Userinterface {
     
     public Scanner scan;
 
+    public Userinterface() {
+        this.scan = new Scanner(System.in);
+    }
+
     public void showMainMenu() {
         System.out.println("\n");
         System.out.println("Welcome to Java bankingSystem");
@@ -16,6 +20,7 @@ public class Userinterface {
         System.out.println("4.Transfer Money");
         System.out.println("5.Check balance");
         System.out.println("6.View Transaction History");
+        System.out.println("8.view Account");
         System.out.println("7.Exit");
     }
 
@@ -28,13 +33,14 @@ public class Userinterface {
     }
 
     public int getUserChoice() {
-        System.out.println("Enter your choice 1-7");
-        while (scan.hasNext()) {
-            scan.nextLine();            
+        System.out.print("Enter your choice 1-7: ");
+        while (!scan.hasNextInt()) {
+            scan.next();
+            System.out.print("Please enter a valid number 1-7: ");
         }
 
         int choice = scan.nextInt();
-        scan.close();
+        scan.nextLine();
         return choice;
     }
 

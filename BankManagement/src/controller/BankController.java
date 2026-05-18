@@ -25,6 +25,8 @@ public class BankController {
                 case 1:
                     createAccount();
                     break;
+                case 8: 
+                    System.out.println(services.getAllAccounts());
             
                 default:
                     break;
